@@ -35,6 +35,27 @@ function generatePassword() {
       if (includeLowercase || includeUppercase || includeNumeric || includeSpecial) {
         // User selected at least one character type;
         // Now we are ready to generate the password.
+
+        var requestedCharacters = "";
+
+        if (includeLowercase) {
+          requestedCharacters = requestedCharacters + "abcdefghijklmnopqrstuvwxyz";
+        }
+
+        if (includeUppercase) {
+          requestedCharacters = requestedCharacters + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+
+        if (includeNumeric) {
+          requestedCharacters = requestedCharacters + "0123456789";
+        }
+
+        if (includeSpecial) {
+          requestedCharacters = requestedCharacters + " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        }
+
+        var newPassword = "";
+
         return newPassword;
       } else {
         // User did not select any character types
