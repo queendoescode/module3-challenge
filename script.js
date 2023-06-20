@@ -7,7 +7,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  if (password) {
+    passwordText.value = password;
+  }
 
 }
 
@@ -56,6 +58,11 @@ function generatePassword() {
 
         var newPassword = "";
 
+        for (var i = 0; i < length; i++) {
+          var randomIndex = Math.floor(Math.random() * requestedCharacters.length);
+          newPassword = newPassword + requestedCharacters[randomIndex];
+        }
+
         return newPassword;
       } else {
         // User did not select any character types
@@ -63,7 +70,7 @@ function generatePassword() {
         return false;
       }
     } else {
-      // User entered nonsense
+      // User entered something that was not a number
       alert("Please enter a number between 8 and 128.");
       return false;
     }
