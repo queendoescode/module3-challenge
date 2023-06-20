@@ -2,6 +2,13 @@
 
 This is the on the job challenge from module 3.
 
+This web application creates random passwords.
+
+- prompt user for length of password to be generated
+- check that length meets the given requirements
+- prompt user to pick choice of characters
+- use a loop to build the password
+- display password to user
 
 ## Screenshots
 
